@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var thirdButton: UIButton!
     @IBOutlet weak var answersCounter: UIBarButtonItem!
     
+    var highestScore: Int!
+    
     var countries: [String] = ["estonia",
                                "france",
                                "germany",
@@ -31,13 +33,18 @@ class ViewController: UIViewController {
     lazy var correctAnswer = 0
     lazy var answersNumber = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setButtons()
         askQuestion()
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
+        self.answersCounter = 0
+        self.score = 0
+        
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
         
@@ -72,22 +79,56 @@ class ViewController: UIViewController {
         answersNumber += 1
         answersCounter.title = String(answersNumber)
         
+        let defaults = UserDefaults.standard
+        
         if answersNumber == 10 && score >= 5 {
+            if var scoreHigh = defaults.value(forKey: "t1") as? Int {
+                if scoreHigh > score {
+                } else {
+                    defaults.set(score, forKey: "t1")
+                    
+                    let alert = UIAlertController(title: "Congratsulations!", message: "New highest score \(scoreHigh)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "New game", style: .default, handler: { [weak self] (_) in
+                        self?.askQuestion()
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            } else {
+                defaults.set(score, forKey: "t1")
+            }
+            
+            
             let alert = UIAlertController(title: title, message: "You won in this game!", preferredStyle: .alert)
-                self.present(alert, animated: true, completion: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        fatalError("Bye!")
-                    }
-                })
+            self.present(alert, animated: true, completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.askQuestion()
+                }
+            })
             
         } else if answersNumber == 10 && score <= 5  {
+            if var scoreHigh = defaults.value(forKey: "t1") as? Int {
+                if scoreHigh > score {
+                } else {
+                    defaults.set(score, forKey: "t1")
+                    
+                    let alert = UIAlertController(title: "Congratsulations!", message: "New highest score \(scoreHigh)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "New game", style: .default, handler: { [weak self] (_) in
+                        self?.askQuestion()
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            } else {
+                defaults.set(score, forKey: "t1")
+            }
             let alert = UIAlertController(title: title, message: "Не повезло не фортануло!", preferredStyle: .alert)
             
-                self.present(alert, animated: true, completion: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                        fatalError("Bye!")
-                    }
-                })
+            self.present(alert, animated: true, completion: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.askQuestion()
+                }
+            })
         }
         
         let alert = UIAlertController(title: title, message: "Your score is \(score)", preferredStyle: .alert)
