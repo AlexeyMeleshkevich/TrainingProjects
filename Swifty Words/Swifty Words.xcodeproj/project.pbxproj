@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A651D948243E58900011A636 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = A651D946243E58900011A636 /* level1.txt */; };
-		A651D949243E58900011A636 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = A651D947243E58900011A636 /* level2.txt */; };
+		A6D156E424488CD1000EDF79 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6D156E224488CD1000EDF79 /* level2.txt */; };
+		A6D156E524488CD1000EDF79 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6D156E324488CD1000EDF79 /* level1.txt */; };
 		A6F3A5A7243E2EAE00A2A160 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3A5A6243E2EAE00A2A160 /* AppDelegate.swift */; };
 		A6F3A5A9243E2EAE00A2A160 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3A5A8243E2EAE00A2A160 /* SceneDelegate.swift */; };
 		A6F3A5AB243E2EAE00A2A160 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F3A5AA243E2EAE00A2A160 /* ViewController.swift */; };
@@ -18,8 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A651D946243E58900011A636 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = level1.txt; path = "../../../../Desktop/project8-files/level1.txt"; sourceTree = "<group>"; };
-		A651D947243E58900011A636 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = level2.txt; path = "../../../../Desktop/project8-files/level2.txt"; sourceTree = "<group>"; };
+		A6D156E224488CD1000EDF79 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = level2.txt; path = "../../../../../../Volumes/LINUX MINT/Hacker/project8-files/level2.txt"; sourceTree = "<group>"; };
+		A6D156E324488CD1000EDF79 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = level1.txt; path = "../../../../../../Volumes/LINUX MINT/Hacker/project8-files/level1.txt"; sourceTree = "<group>"; };
 		A6F3A5A3243E2EAE00A2A160 /* Swifty Words.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swifty Words.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6F3A5A6243E2EAE00A2A160 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6F3A5A8243E2EAE00A2A160 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +67,8 @@
 				A6F3A5AF243E2EAF00A2A160 /* Assets.xcassets */,
 				A6F3A5B1243E2EAF00A2A160 /* LaunchScreen.storyboard */,
 				A6F3A5B4243E2EAF00A2A160 /* Info.plist */,
-				A651D946243E58900011A636 /* level1.txt */,
-				A651D947243E58900011A636 /* level2.txt */,
+				A6D156E324488CD1000EDF79 /* level1.txt */,
+				A6D156E224488CD1000EDF79 /* level2.txt */,
 			);
 			path = "Swifty Words";
 			sourceTree = "<group>";
@@ -131,10 +131,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A651D949243E58900011A636 /* level2.txt in Resources */,
+				A6D156E524488CD1000EDF79 /* level1.txt in Resources */,
 				A6F3A5B3243E2EAF00A2A160 /* LaunchScreen.storyboard in Resources */,
-				A651D948243E58900011A636 /* level1.txt in Resources */,
 				A6F3A5B0243E2EAF00A2A160 /* Assets.xcassets in Resources */,
+				A6D156E424488CD1000EDF79 /* level2.txt in Resources */,
 				A6F3A5AE243E2EAE00A2A160 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

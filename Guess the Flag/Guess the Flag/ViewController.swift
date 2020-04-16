@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     func askQuestion(action: UIAlertAction! = nil) {
-        self.answersCounter = 0
+        self.answersCounter.title = "\(0)"
         self.score = 0
         
         countries.shuffle()
@@ -75,6 +75,13 @@ class ViewController: UIViewController {
             title = "Wrong, correct is \(correctAnswer + 1)"
             score -= 1
         }
+        
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 3, options: [], animations: { [weak sender] in
+            sender?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) { [weak sender] in
+                sender?.transform = .identity
+            }
+        }, completion: nil)
         
         answersNumber += 1
         answersCounter.title = String(answersNumber)
