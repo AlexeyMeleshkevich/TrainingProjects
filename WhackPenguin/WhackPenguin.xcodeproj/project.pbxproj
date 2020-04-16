@@ -1,0 +1,367 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A60AFADB244788EE008682AD /* whack.caf in Resources */ = {isa = PBXBuildFile; fileRef = A60AFAD9244788EE008682AD /* whack.caf */; };
+		A60AFADC244788EE008682AD /* whackBad.caf in Resources */ = {isa = PBXBuildFile; fileRef = A60AFADA244788EE008682AD /* whackBad.caf */; };
+		A68C3A542448686300F7836D /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68C3A532448686300F7836D /* WhackSlot.swift */; };
+		A6C2CBE024487E2A003F8890 /* Первомайская-улица.caf in Resources */ = {isa = PBXBuildFile; fileRef = A6C2CBDF24487E2A003F8890 /* Первомайская-улица.caf */; };
+		A6C2CBE22448804C003F8890 /* smokeLil.sks in Resources */ = {isa = PBXBuildFile; fileRef = A6C2CBE12448804C003F8890 /* smokeLil.sks */; };
+		A6CB73312447745C00481553 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB73302447745C00481553 /* AppDelegate.swift */; };
+		A6CB73332447745C00481553 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A6CB73322447745C00481553 /* GameScene.sks */; };
+		A6CB73372447745C00481553 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB73362447745C00481553 /* GameScene.swift */; };
+		A6CB73392447745C00481553 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB73382447745C00481553 /* GameViewController.swift */; };
+		A6CB733C2447745C00481553 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CB733A2447745C00481553 /* Main.storyboard */; };
+		A6CB733E2447745E00481553 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CB733D2447745E00481553 /* Assets.xcassets */; };
+		A6CB73412447745E00481553 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6CB733F2447745E00481553 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A60AFAD9244788EE008682AD /* whack.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whack.caf; sourceTree = "<group>"; };
+		A60AFADA244788EE008682AD /* whackBad.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = whackBad.caf; sourceTree = "<group>"; };
+		A68C3A532448686300F7836D /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
+		A6C2CBDF24487E2A003F8890 /* Первомайская-улица.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Первомайская-улица.caf"; path = "../../../../Downloads/Первомайская-улица.caf"; sourceTree = "<group>"; };
+		A6C2CBE12448804C003F8890 /* smokeLil.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smokeLil.sks; sourceTree = "<group>"; };
+		A6CB732D2447745C00481553 /* WhackPenguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhackPenguin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6CB73302447745C00481553 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A6CB73322447745C00481553 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		A6CB73362447745C00481553 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		A6CB73382447745C00481553 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		A6CB733B2447745C00481553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6CB733D2447745E00481553 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6CB73402447745E00481553 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6CB73422447745E00481553 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6CB732A2447745C00481553 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6CB73242447745C00481553 = {
+			isa = PBXGroup;
+			children = (
+				A6CB732F2447745C00481553 /* WhackPenguin */,
+				A6CB732E2447745C00481553 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6CB732E2447745C00481553 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB732D2447745C00481553 /* WhackPenguin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6CB732F2447745C00481553 /* WhackPenguin */ = {
+			isa = PBXGroup;
+			children = (
+				A6CB73302447745C00481553 /* AppDelegate.swift */,
+				A6CB73322447745C00481553 /* GameScene.sks */,
+				A6CB73362447745C00481553 /* GameScene.swift */,
+				A6CB73382447745C00481553 /* GameViewController.swift */,
+				A6CB733A2447745C00481553 /* Main.storyboard */,
+				A6CB733D2447745E00481553 /* Assets.xcassets */,
+				A6CB733F2447745E00481553 /* LaunchScreen.storyboard */,
+				A6CB73422447745E00481553 /* Info.plist */,
+				A60AFAD9244788EE008682AD /* whack.caf */,
+				A60AFADA244788EE008682AD /* whackBad.caf */,
+				A6C2CBDF24487E2A003F8890 /* Первомайская-улица.caf */,
+				A68C3A532448686300F7836D /* WhackSlot.swift */,
+				A6C2CBE12448804C003F8890 /* smokeLil.sks */,
+			);
+			path = WhackPenguin;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6CB732C2447745C00481553 /* WhackPenguin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6CB73452447745E00481553 /* Build configuration list for PBXNativeTarget "WhackPenguin" */;
+			buildPhases = (
+				A6CB73292447745C00481553 /* Sources */,
+				A6CB732A2447745C00481553 /* Frameworks */,
+				A6CB732B2447745C00481553 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhackPenguin;
+			productName = WhackPenguin;
+			productReference = A6CB732D2447745C00481553 /* WhackPenguin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6CB73252447745C00481553 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Alexey Meleshkevich";
+				TargetAttributes = {
+					A6CB732C2447745C00481553 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = A6CB73282447745C00481553 /* Build configuration list for PBXProject "WhackPenguin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6CB73242447745C00481553;
+			productRefGroup = A6CB732E2447745C00481553 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6CB732C2447745C00481553 /* WhackPenguin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6CB732B2447745C00481553 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB733C2447745C00481553 /* Main.storyboard in Resources */,
+				A6C2CBE024487E2A003F8890 /* Первомайская-улица.caf in Resources */,
+				A60AFADB244788EE008682AD /* whack.caf in Resources */,
+				A6C2CBE22448804C003F8890 /* smokeLil.sks in Resources */,
+				A6CB73332447745C00481553 /* GameScene.sks in Resources */,
+				A6CB733E2447745E00481553 /* Assets.xcassets in Resources */,
+				A6CB73412447745E00481553 /* LaunchScreen.storyboard in Resources */,
+				A60AFADC244788EE008682AD /* whackBad.caf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6CB73292447745C00481553 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6CB73372447745C00481553 /* GameScene.swift in Sources */,
+				A6CB73392447745C00481553 /* GameViewController.swift in Sources */,
+				A68C3A542448686300F7836D /* WhackSlot.swift in Sources */,
+				A6CB73312447745C00481553 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A6CB733A2447745C00481553 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CB733B2447745C00481553 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6CB733F2447745E00481553 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6CB73402447745E00481553 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6CB73432447745E00481553 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A6CB73442447745E00481553 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6CB73462447745E00481553 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WD3HSGX563;
+				INFOPLIST_FILE = WhackPenguin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMeleshkevich.WhackPenguin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A6CB73472447745E00481553 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WD3HSGX563;
+				INFOPLIST_FILE = WhackPenguin/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AlexeyMeleshkevich.WhackPenguin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6CB73282447745C00481553 /* Build configuration list for PBXProject "WhackPenguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CB73432447745E00481553 /* Debug */,
+				A6CB73442447745E00481553 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6CB73452447745E00481553 /* Build configuration list for PBXNativeTarget "WhackPenguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6CB73462447745E00481553 /* Debug */,
+				A6CB73472447745E00481553 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6CB73252447745C00481553 /* Project object */;
+}
