@@ -7,27 +7,125 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UICollectionViewController {
     
-    var people = [Person]()
-
+    var people = [Person]() {
+        didSet(person) {
+            self.collectionView.reloadData()
+        }
+    }
+    let button = UIButton(frame: CGRect.zero)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = UserDefaults.standard
-        if let savedPeople = defaults.object(forKey: "people") as? Data {
-            let jsonDecoder = JSONDecoder()
-            
-            do {
-                people = try jsonDecoder.decode([Person].self, from: savedPeople)
-            } catch {
-                print("Failed to load people.")
-            }
-        }
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addData))
         collectionView.backgroundColor = UIColor.purple
-        // Do any additional setup after loading the view.
+        setSaveButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.coreDataManager.persistentContainer.viewContext
+        
+        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+        
+        do {
+            people = try context.fetch(fetchRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    func setSaveButton() {
+        view.addSubview(button)
+        
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = UIColor.orange
+        button.layer.cornerRadius = 15
+        button.setTitle("Сохранить", for: .normal)
+        
+        UIView.animate(withDuration: 1) {
+            NSLayoutConstraint.activate([
+                self.button.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 5),
+                self.button.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -5),
+                self.button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -10),
+                self.button.heightAnchor.constraint(equalToConstant: 80)
+            ])
+            self.button.layoutIfNeeded()
+        }
+        
+        button.addTarget(self, action: #selector(saveData), for: .touchUpInside)
+    }
+    
+    @objc func saveData() {
+        if !validateData() {
+            return
+        }
+        if !validateDataFields() {
+            return
+        }
+        
+        if let contex = (UIApplication.shared.delegate as? AppDelegate)?.coreDataManager.persistentContainer.viewContext {
+            let entity = NSEntityDescription.entity(forEntityName: "Person", in: contex)
+            for i in 0..<people.count {
+                let taskObject = NSManagedObject(entity: entity!, insertInto: contex) as! Person
+                taskObject.name = people[i].name
+                taskObject.image = people[i].image
+                
+                do {
+                    try contex.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func saveData2(data: (String?, Data)) {
+        if let contex = (UIApplication.shared.delegate as? AppDelegate)?.coreDataManager.persistentContainer.viewContext {
+            let entity = NSEntityDescription.entity(forEntityName: "Person", in: contex)
+            for i in 0..<people.count {
+                let taskObject = NSManagedObject(entity: entity!, insertInto: contex) as! Person
+                
+                taskObject.name = people[i].name
+                taskObject.image = people[i].image
+                
+                do {
+                    try contex.save()
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    func validateData() -> Bool {
+        if people.count == 0 {
+            let alert = UIAlertController(title: "Добавьте пользователей", message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            return false
+        }
+        return true
+    }
+    
+    func validateDataFields() -> Bool {
+        for i in 0..<collectionView.numberOfItems(inSection: 0) {
+            let cell = collectionView.cellForItem(at: IndexPath(row: i, section: 0)) as? PersonCell
+            if cell?.imageView == nil {
+                return false
+            }
+            if (cell?.titleLabel.text!.isEmpty)! || cell?.titleLabel.text == "Unknown" {
+                let alert = UIAlertController(title: "Введите имя в ячейке \(i + 1)", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ок", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return false
+            }
+        }
+        return true
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -43,17 +141,17 @@ class ViewController: UICollectionViewController {
         
         let person = people[indexPath.item]
         
-        let path = getDocumentDirectory().appendingPathComponent(person.image)
-        
         cell.titleLabel.text = person.name
-        cell.imageView.image = UIImage(contentsOfFile: path.path)
+        cell.imageView.image = UIImage(data: person.image!)
         
         cell.contentView.widthAnchor.constraint(equalToConstant: 140).isActive = true
         cell.contentView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        
         cell.imageView.layer.borderColor = UIColor(white: 0, alpha: 0.3).cgColor
         cell.imageView.layer.borderWidth = 2
         cell.imageView.layer.cornerRadius = 8
         cell.layer.cornerRadius = cell.frame.height/6
+        
         return cell
     }
     
@@ -67,7 +165,6 @@ class ViewController: UICollectionViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak self, weak alert] (_) in
                 guard let newName = alert?.textFields?[0].text else { return }
                 person.name = newName
-                self?.savePerson()
                 self?.collectionView.reloadData()
             }))
             
@@ -77,9 +174,28 @@ class ViewController: UICollectionViewController {
         mainAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { [weak self] (_) in
             self?.people.remove(at: indexPath.item)
             self?.collectionView.reloadData()
+            
+            
+            guard let personToDelete = self?.people[indexPath.row] else { return }
+            self?.detelePerson(person: personToDelete)
+            
         }))
         mainAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(mainAlert, animated: true, completion: nil)
+    }
+    
+    func detelePerson(person: Person) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.coreDataManager.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Person", in: context)
+        
+        context.delete(person)
+        
+        do {
+            try context.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
     
     @objc func addData() {
@@ -90,44 +206,23 @@ class ViewController: UICollectionViewController {
         UIImagePickerController.isSourceTypeAvailable(.camera)
         present(picker, animated: true, completion: nil)
     }
-
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.editedImage] as? UIImage else { return }
         
-        let imageName = UUID().uuidString
-        let imagePath = getDocumentDirectory().appendingPathComponent(imageName)
+        let imageData = image.jpegData(compressionQuality: 1)
         
-        if let jpegData = image.jpegData(compressionQuality: 0.8) {
-            try? jpegData.write(to: imagePath)
-        }
-        
-        let person = Person(name: "Unknown", image: imageName)
-        people.append(person)
-        collectionView.reloadData()
-        savePerson()
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func getDocumentDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-    }
-    
-    func savePerson() {
-//        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: people, requiringSecureCoding: false) {
-//            let defaults = UserDefaults.standard
-//            defaults.set(savedData, forKey: "people")
-//        }
-        let jsonEncoder = JSONEncoder()
-        
-        if let savedData = try? jsonEncoder.encode(people) {
-            let defaults = UserDefaults.standard
-            defaults.set(savedData, forKey: "people")
-        } else {
-            print("Failed to save people.")
+        if let contex = (UIApplication.shared.delegate as? AppDelegate)?.coreDataManager.persistentContainer.viewContext {
+            let entity = NSEntityDescription.entity(forEntityName: "Person", in: contex)
+            let person = Person(entity: entity!, insertInto: contex)
+            person.name = "Unknown"
+            person.image = imageData
+            people.append(person)
+            collectionView.reloadData()
+            dismiss(animated: true, completion: nil)
         }
     }
     

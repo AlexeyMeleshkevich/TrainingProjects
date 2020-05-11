@@ -12,4 +12,9 @@ import UIKit
 class PersonCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+    }
 }
