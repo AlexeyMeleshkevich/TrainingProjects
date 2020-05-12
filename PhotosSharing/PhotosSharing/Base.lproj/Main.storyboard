@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tTz-p0-BjS">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="jn2-at-02J">
+            <objects>
+                <collectionViewController id="Lvt-yT-amU" customClass="ViewController" customModule="PhotosSharing" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="OCu-CR-G1g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Td-XN-NkX">
+                            <size key="itemSize" width="145" height="145"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageViewCell" id="eao-ID-qiY">
+                                <rect key="frame" x="10" y="10" width="145" height="145"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="YuM-qP-1C3">
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1000" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y5p-Y8-jyy">
+                                            <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Y5p-Y8-jyy" firstAttribute="top" secondItem="YuM-qP-1C3" secondAttribute="top" id="Gip-VN-ZPs"/>
+                                        <constraint firstAttribute="trailing" secondItem="Y5p-Y8-jyy" secondAttribute="trailing" id="HZ8-nM-l6r"/>
+                                        <constraint firstItem="Y5p-Y8-jyy" firstAttribute="centerY" secondItem="YuM-qP-1C3" secondAttribute="centerY" id="cjB-CS-fKC"/>
+                                        <constraint firstItem="Y5p-Y8-jyy" firstAttribute="leading" secondItem="YuM-qP-1C3" secondAttribute="leading" id="t6p-bf-PU2"/>
+                                        <constraint firstAttribute="bottom" secondItem="Y5p-Y8-jyy" secondAttribute="bottom" id="xqO-88-JK8"/>
+                                        <constraint firstItem="Y5p-Y8-jyy" firstAttribute="centerX" secondItem="YuM-qP-1C3" secondAttribute="centerX" id="ybm-zO-lom"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Lvt-yT-amU" id="cS1-hD-Efh"/>
+                            <outlet property="delegate" destination="Lvt-yT-amU" id="eK3-Ju-ksL"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="dvw-Mj-tob"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U4f-xS-p7k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1349.2753623188407" y="82.366071428571431"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DGG-ld-ffz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tTz-p0-BjS" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2bp-yZ-nBu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lvt-yT-amU" kind="relationship" relationship="rootViewController" id="b7y-bS-mFy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVE-RH-XGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439.13043478260875" y="82.366071428571431"/>
+        </scene>
+    </scenes>
+</document>
